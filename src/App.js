@@ -1,15 +1,62 @@
-import React from "react";
+import React, {
+  useState,
+  useEffect,
+  useLayoutEffect,
+  useCallback,
+  useRef
+} from "react";
 
 import "./global.css";
 import "./styles.css";
 
+function useWindowSize() {
+  const [size, setSize] = useState([0, 0]);
+
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight]);
+    }
+
+    window.addEventListener("resize", updateSize);
+
+    updateSize();
+
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
+  return size;
+}
+
 function App() {
+  const [isVisible, setIsVisible] = useState(false);
+  const navRef = useRef(null);
+
+  const [width] = useWindowSize();
+
+  const handleBtnMenuClick = useCallback(() => {
+    navRef.current.classList.toggle("-open");
+  }, []);
+
+  const handleCartClick = useCallback(event => {
+    event.preventDefault();
+  }, []);
+
+  useEffect(() => {
+    if (width <= 750 && !isVisible) {
+      setIsVisible(true);
+    }
+
+    if (width > 750 && isVisible) {
+      setIsVisible(false);
+    }
+  }, [width, isVisible]);
+
   return (
     <>
       <header className="header-page">
         <h1 className="logo">Minha Loja</h1>
 
-        <nav className="navigation-menu">
+        <nav className="navigation-menu" ref={navRef}>
           <a href="/" className="action">
             Perfumaria
           </a>
@@ -24,8 +71,24 @@ function App() {
           </a>
         </nav>
 
+        {isVisible && (
+          <button
+            type="button"
+            className="btn-menu"
+            onClick={handleBtnMenuClick}
+          >
+            <svg
+              className="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 18 18"
+            >
+              <path d="M2 13.5h14V12H2v1.5zm0-4h14V8H2v1.5zM2 4v1.5h14V4H2z" />
+            </svg>
+          </button>
+        )}
+
         <div className="cart-container">
-          <a href="/" className="cart">
+          <a href="/" className="cart" onClick={handleCartClick}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
