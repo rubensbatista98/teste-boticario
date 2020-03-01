@@ -160,20 +160,24 @@
   max-width: 350px;
   text-align: center;
   border: 2px solid #4caf5066;
-  padding: 10px 5px 30px;
   margin: auto;
 }
 
-.product-card > .thumb {
+.product-card > a {
+  display: block;
+  padding: 10px 5px 30px;
+}
+
+.product-card .thumb {
   width: 80%;
   margin: auto;
 }
 
-.product-card > .thumb > img {
+.product-card .thumb > img {
   width: 100%;
 }
 
-.product-card > .title {
+.product-card .title {
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -181,7 +185,7 @@
   margin-top: 40px;
 }
 
-.product-card > .price {
+.product-card .price {
   font-size: 1.1rem;
   color: #1b5e20;
   margin-top: 20px;
