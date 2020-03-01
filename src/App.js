@@ -100,6 +100,58 @@ function App() {
           </a>
         </div>
       </header>
+
+      <main>
+        <section className="products-section">
+          <div className="product-card">
+            <div className="thumb">
+              <img
+                src="https://boticario.vteximg.com.br/arquivos/ids/195945/Crazy_Feelings_Desodorante_Colonia_Boticollection_100ml_71877_frontal.jpg?v=636760814659370000"
+                alt="Imagem da oferta"
+              />
+            </div>
+
+            <h2 className="title">Nome do Produto</h2>
+            <h3 className="price">R$ 00,00</h3>
+          </div>
+
+          <div className="product-card">
+            <div className="thumb">
+              <img
+                src="https://boticario.vteximg.com.br/arquivos/ids/195945/Crazy_Feelings_Desodorante_Colonia_Boticollection_100ml_71877_frontal.jpg?v=636760814659370000"
+                alt="Imagem da oferta"
+              />
+            </div>
+
+            <h2 className="title">Nome do Produto</h2>
+            <h3 className="price">R$ 00,00</h3>
+          </div>
+
+          <div className="product-card">
+            <div className="thumb">
+              <img
+                src="https://boticario.vteximg.com.br/arquivos/ids/195945/Crazy_Feelings_Desodorante_Colonia_Boticollection_100ml_71877_frontal.jpg?v=636760814659370000"
+                alt="Imagem da oferta"
+              />
+            </div>
+
+            <h2 className="title">Nome do Produto</h2>
+            <h3 className="price">R$ 00,00</h3>
+          </div>
+
+          <div className="product-card">
+            <div className="thumb">
+              <img
+                src="https://boticario.vteximg.com.br/arquivos/ids/195945/Crazy_Feelings_Desodorante_Colonia_Boticollection_100ml_71877_frontal.jpg?v=636760814659370000"
+                alt="Imagem da oferta"
+              />
+            </div>
+
+            <h2 className="title">Nome do Produto</h2>
+            <h3 className="price">R$ 00,00</h3>
+          </div>
+        </section>
+      </main>
     </>
   );
 }
