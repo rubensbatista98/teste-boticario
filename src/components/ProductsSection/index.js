@@ -4,14 +4,14 @@ import ProductCard from "../ProductCard";
 
 import "./styles.css";
 
-const ProductsSection = () => {
+const ProductsSection = ({ products }) => {
   return (
     <section className="products-section">
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
+      <h2 className="title">Últimos Produtos</h2>
+
+      {products.map(product => (
+        <ProductCard product={product} />
+      ))}
     </section>
   );
 };

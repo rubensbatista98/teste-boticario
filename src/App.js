@@ -3,6 +3,8 @@ import React from "react";
 import HeaderPage from "./components/HeaderPage";
 import ProductsSection from "./components/ProductsSection";
 
+import data from "./products";
+
 import "./global.css";
 
 function App() {
@@ -11,7 +13,7 @@ function App() {
       <HeaderPage />
 
       <main>
-        <ProductsSection />
+        <ProductsSection products={data} />
       </main>
     </>
   );

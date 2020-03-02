@@ -2,7 +2,7 @@ import React, { useCallback, useRef } from "react";
 
 import "./styles.css";
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
   const cardRef = useRef();
 
   const showHandleCart = useCallback(event => {
@@ -17,14 +17,11 @@ const ProductCard = () => {
     <div className="product-card" ref={cardRef}>
       <a href="/" onFocus={showHandleCart} onClick={e => e.preventDefault()}>
         <div className="thumb">
-          <img
-            src="https://boticario.vteximg.com.br/arquivos/ids/195945/Crazy_Feelings_Desodorante_Colonia_Boticollection_100ml_71877_frontal.jpg?v=636760814659370000"
-            alt="Imagem da oferta"
-          />
+          <img src={product.images[0].imageUrl} alt="Imagem da oferta" />
         </div>
 
-        <h2 className="title">Nome do Produto</h2>
-        <h3 className="price">R$ 00,00</h3>
+        <h2 className="title">{product.name}</h2>
+        <h3 className="price">R$ {product.value}</h3>
 
         <div className="handle-cart">
           <button type="button" className="btn-close" onClick={hideHandleCart}>

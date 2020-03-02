@@ -7,3 +7,20 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
+
+.products-section > .title {
+  font-size: 2.1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #1b5e20;
+  margin-bottom: 20px;
+
+  grid-column: 1/-1;
+}
+
+@media (max-width: 750px) {
+  .products-section > .title {
+    font-size: 1.6rem;
+  }
+}
