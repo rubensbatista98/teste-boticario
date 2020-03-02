@@ -161,6 +161,8 @@
   text-align: center;
   border: 2px solid #4caf5066;
   margin: auto;
+
+  position: relative;
 }
 
 .product-card > a {
@@ -189,4 +191,85 @@
   font-size: 1.1rem;
   color: #1b5e20;
   margin-top: 20px;
+}
+
+.product-card .product-cart {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  cursor: default;
+
+  display: none;
+}
+
+.product-card.-show .product-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: all;
+}
+
+.product-card .product-cart > .btn-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.product-card .product-cart > .btn-close > svg {
+  fill: #ffffff;
+  width: 45px;
+  height: 45px;
+}
+
+.product-card .product-cart > .btn-close:hover > svg {
+  fill: #4caf50;
+}
+
+.product-card .product-cart > .btn {
+  display: inline-block;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background 150ms linear;
+}
+.product-card .product-cart > .btn:hover {
+  background-color: #1b5e20;
+}
+
+.product-card .product-cart > .btn > svg {
+  fill: #ffffff;
+  width: 30px;
+  height: 30px;
+}
+
+.product-card .product-cart > .btn.-add {
+  position: relative;
+}
+
+.product-card .product-cart > .btn.-add > .count {
+  width: 15px;
+  height: 15px;
+  color: #4caf50;
+  background-color: #ffffff;
+  padding: 5px;
+  border-radius: 10px;
+
+  position: absolute;
+  top: 15px;
+  right: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
