@@ -1,0 +1,33 @@
+.cart-container > .cart {
+  border: 2px solid #2e7031;
+  border-radius: 30px;
+  padding: 5px 20px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+}
+
+.cart-container > .cart > .icon {
+  width: 24px;
+  height: 24px;
+  fill: #2e7031;
+}
+
+.cart-container > .cart > .total {
+  width: 0px;
+  height: 19px;
+
+  display: inline-block;
+  color: #ffffff;
+  margin-left: 0px;
+  overflow: hidden;
+
+  transition: width 200ms linear;
+}
+
+.cart-container > .cart:hover > .total,
+.cart-container > .cart:focus > .total {
+  margin-left: 5px;
+  width: 62px;
+}
