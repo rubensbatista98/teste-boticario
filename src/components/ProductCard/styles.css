@@ -1,5 +1,6 @@
 .product-card {
   max-width: 350px;
+  height: 100%;
   text-align: center;
   border: 2px solid #4caf5066;
   margin: auto;
@@ -22,7 +23,7 @@
 }
 
 .product-card .title {
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #357a38;
@@ -30,7 +31,7 @@
 }
 
 .product-card .price {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #1b5e20;
   margin-top: 20px;
 }
@@ -71,6 +72,7 @@
   height: 45px;
 }
 
+.product-card .handle-cart > .btn-close:focus > .icon,
 .product-card .handle-cart > .btn-close:hover > .icon {
   fill: #4caf50;
 }
@@ -85,6 +87,7 @@
   cursor: pointer;
   transition: background 150ms linear;
 }
+.product-card .handle-cart > .btn:focus,
 .product-card .handle-cart > .btn:hover {
   background-color: #1b5e20;
 }

@@ -9,7 +9,6 @@ const Cart = ({ total }) => {
 
   return (
     <div className="cart-container">
-      {console.log(total)}
       <a href="/" className="cart" onClick={handleClick}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -46,7 +46,6 @@ const HeaderPage = () => {
 
   return (
     <header className="header-page">
-      {console.log(formatPrice)}
       <h1 className="logo">Minha Loja</h1>
 
       {isVisible && <ButtonMenu hanldeClick={hanldeClick} />}
