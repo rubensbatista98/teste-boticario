@@ -99,7 +99,7 @@
   position: relative;
 }
 
-.product-card .handle-cart > .btn.-add > .count {
+.product-card .handle-cart > .btn.-add > .quantity {
   width: 15px;
   height: 15px;
   color: #4caf50;

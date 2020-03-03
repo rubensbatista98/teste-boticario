@@ -10,7 +10,7 @@ const ProductsSection = ({ products }) => {
       <h2 className="title">Últimos Produtos</h2>
 
       {products.map(product => (
-        <ProductCard product={product} />
+        <ProductCard key={product.name} product={product} />
       ))}
     </section>
   );
