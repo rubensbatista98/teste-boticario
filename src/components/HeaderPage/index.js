@@ -3,11 +3,14 @@ import React, {
   useEffect,
   useRef,
   useCallback,
-  useLayoutEffect
+  useLayoutEffect,
+  useContext,
+  useMemo
 } from "react";
 
 import Cart from "../Cart";
 import ButtonMenu from "../ButtonMenu";
+import { CartContext } from "../../context/CartContext";
 
 import "./styles.css";
 
@@ -16,9 +19,20 @@ const HeaderPage = () => {
   const navRef = useRef(null);
   const [width] = useWindowSize();
 
+  const { totalPrice } = useContext(CartContext);
+
   const hanldeClick = useCallback(() => {
     navRef.current.classList.toggle("-open");
   }, []);
+
+  const formatPrice = useMemo(
+    () =>
+      totalPrice.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL"
+      }),
+    [totalPrice]
+  );
 
   useEffect(() => {
     if (width <= 750 && !isVisible) {
@@ -32,6 +46,7 @@ const HeaderPage = () => {
 
   return (
     <header className="header-page">
+      {console.log(formatPrice)}
       <h1 className="logo">Minha Loja</h1>
 
       {isVisible && <ButtonMenu hanldeClick={hanldeClick} />}
@@ -54,7 +69,7 @@ const HeaderPage = () => {
         </a>
       </nav>
 
-      <Cart total="00,00" />
+      <Cart total={formatPrice} />
     </header>
   );
 };

@@ -19,6 +19,7 @@
   height: 19px;
 
   display: inline-block;
+  text-align: center;
   color: #ffffff;
   margin-left: 0px;
   overflow: hidden;
@@ -29,5 +30,5 @@
 .cart-container > .cart:hover > .total,
 .cart-container > .cart:focus > .total {
   margin-left: 5px;
-  width: 62px;
+  width: 100px;
 }

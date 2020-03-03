@@ -1,4 +1,4 @@
-import React, { useState, createContext, useCallback, useEffect } from "react";
+import React, { useState, createContext, useCallback, useMemo } from "react";
 
 const CartContext = createContext();
 
@@ -34,10 +34,6 @@ const CartProvider = React.memo(({ children }) => {
     [items, setItems]
   );
 
-  useEffect(() => {
-    console.log(items);
-  }, [items]);
-
   const removeProductFromCart = useCallback(
     productItem => {
       const productInCart = items.find(item => productItem.name === item.name);
@@ -59,8 +55,18 @@ const CartProvider = React.memo(({ children }) => {
     [items, setItems]
   );
 
+  const totalPrice = useMemo(() => {
+    const total = items.reduce((accumulator, item) => {
+      return (accumulator += item.value * item.quantity);
+    }, 0);
+
+    return total;
+  }, [items]);
+
   return (
-    <CartContext.Provider value={{ addProductInCart, removeProductFromCart }}>
+    <CartContext.Provider
+      value={{ addProductInCart, removeProductFromCart, totalPrice }}
+    >
       {children}
     </CartContext.Provider>
   );
